@@ -2,6 +2,7 @@
 
 ## Download
 Curseforge: TODO
+
 GitHub: https://github.com/carbohydrate/NoTalk
 
 ## Description
