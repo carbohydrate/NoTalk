@@ -1,15 +1,17 @@
 # NoTalk
 
 ## Download
-TODO
+Curseforge: TODO
+GitHub: https://github.com/carbohydrate/NoTalk
 
 ## Description
-NoTalk is a World of Warcraft addon that blocks talking head pop up windows.
+NoTalk is a World of Warcraft addon that blocks talking head pop up frames.
 
 ## Features
-- By default if the player has not seen the talking head, will show it the 1st time.
+- By default will turn off all talking heads.  (To see each one time turn on with /nt once)
 - Verbose mode that will print a chat message if a talking head was blocked.
 
 ## Slash Commands
 - /nt
 - /nt verbose
+- /nt once

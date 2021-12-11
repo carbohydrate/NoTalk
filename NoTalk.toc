@@ -4,6 +4,6 @@
 ## Version: 1.0.0
 ## Author: vitamin
 ## Notes: Do not display talking head frame.
-## SavedVariables: NoTalkData, NoTalkVerbose
+## SavedVariables: NoTalkData, NoTalkVerbose, NoTalkOnce
 
 NoTalk.lua

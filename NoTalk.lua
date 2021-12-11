@@ -1,6 +1,16 @@
 local Debug = false
 local f = CreateFrame("Frame")
 
+local function CloseTalkingHead()
+    TalkingHeadFrame_CloseImmediately()
+end
+
+local function CheckVerboseMessage()
+    if NoTalkVerbose == true then
+        print("NoTalk: Blocked a talking head.")
+    end
+end
+
 function f:OnEvent(event, ...)
     self[event](self, event, ...)
 end
@@ -13,6 +23,9 @@ function f:ADDON_LOADED(event, addOnName)
         if NoTalkData == nil then
             NoTalkData = {}
         end
+        if NoTalkOnce == nil then
+            NoTalkOnce = false
+        end
         f:UnregisterEvent("ADDON_LOADED");
     end
 end
@@ -24,39 +37,57 @@ function f:TALKINGHEAD_REQUESTED(event)
     if Debug then
         print("displayInfo: "..displayInfo, "cameraID: "..cameraID, "vo: "..vo)
     end
-    --is displayInfo or vo a better id to use to decied if seen the talking head before?
-    --going to start with vo id, incase same displayInfo is used for multiple vo, not sure if this happens or is the case.
-    if NoTalkData[vo] then
-        if NoTalkVerbose == true then
-            print('Blocked a talking head.')
-        end
 
-        TalkingHeadFrame_CloseImmediately()
+    if NoTalkOnce then
+        --is displayInfo or vo a better id to use to decied if seen the talking head before?
+        --going to start with vo id, incase same displayInfo is used for multiple vo, not sure if this happens or is the case.
+        if NoTalkData[vo] then
+            CheckVerboseMessage()
+            CloseTalkingHead()
+        else
+            NoTalkData[vo] = true
+        end
     else
-        NoTalkData[vo] = true
+        CheckVerboseMessage()
+        CloseTalkingHead()
     end
 end
 
 SLASH_NoTalk1 = "/nt"
 
 SlashCmdList.NoTalk = function(msg)
-    if msg == 'verbose' then
+    if msg == "verbose" then
         if NoTalkVerbose == false then
             NoTalkVerbose = true
-            print('Will print a chat message when a talking head is blocked.')
+            print("NoTalk: Will print a chat message when a talking head is blocked.")
         elseif NoTalkVerbose == true then
             NoTalkVerbose = false
-            print('Verbose is now disabled.')
+            print("NoTalk: Verbose is now disabled.")
         end
     end
 
-    if msg == '' then
-        print('No Talk... /nt')
-        print('Options: verbose')
-        if NoTalkVerbose == false then
-            print('Verbose mode is off.')
+    if msg == "once" then
+        if NoTalkOnce == false then
+            NoTalkOnce = true
+            print("NoTalk: Will show talking heads that you have not seen before once.")
         else
-            print('Verbose mode is on.')
+            NoTalkOnce = false
+            print("NoTalk: Will never show talking heads.")
+        end
+    end
+
+    if msg == "" then
+        print("No Talk... /nt")
+        print("Options: verbose | once")
+        if NoTalkVerbose == false then
+            print("Verbose mode is off.")
+        else
+            print("Verbose mode is on.")
+        end
+        if NoTalkOnce == false then
+            print("Once mode is off.")
+        else
+            print("Once mode is on.")
         end
     end
 end
