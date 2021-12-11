@@ -1,0 +1,9 @@
+## Interface: 90105
+
+## Title: NoTalk
+## Version: 1.0.0
+## Author: vitamin
+## Notes: Do not display talking head frame.
+## SavedVariables: NoTalkData, NoTalkVerbose
+
+NoTalk.lua
