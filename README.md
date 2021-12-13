@@ -1,7 +1,7 @@
 # NoTalk
 
 ## Download
-Curseforge: TODO
+Curseforge: https://www.curseforge.com/wow/addons/notalk
 
 GitHub: https://github.com/carbohydrate/NoTalk
 
