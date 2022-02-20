@@ -26,13 +26,13 @@ function f:ADDON_LOADED(event, addOnName)
         if NoTalkOnce == nil then
             NoTalkOnce = false
         end
-        f:UnregisterEvent("ADDON_LOADED");
+        f:UnregisterEvent("ADDON_LOADED")
     end
 end
 
 function f:TALKINGHEAD_REQUESTED(event)
-    --local displayInfo, cameraID, vo, duration, lineNumber, numLines, name, text, isNewTalkingHead, textureKit = C_TalkingHead.GetCurrentLineInfo();
-    local displayInfo, cameraID, vo = C_TalkingHead.GetCurrentLineInfo();
+    --local displayInfo, cameraID, vo, duration, lineNumber, numLines, name, text, isNewTalkingHead, textureKit = C_TalkingHead.GetCurrentLineInfo()
+    local displayInfo, cameraID, vo = C_TalkingHead.GetCurrentLineInfo()
 
     if Debug then
         print("displayInfo: "..displayInfo, "cameraID: "..cameraID, "vo: "..vo)
