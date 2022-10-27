@@ -2,7 +2,7 @@ local Debug = false
 local f = CreateFrame("Frame")
 
 local function CloseTalkingHead()
-    TalkingHeadFrame_CloseImmediately()
+    TalkingHeadFrame:CloseImmediately()
 end
 
 local function CheckVerboseMessage()
@@ -45,7 +45,9 @@ function f:TALKINGHEAD_REQUESTED(event)
             CheckVerboseMessage()
             CloseTalkingHead()
         else
-            NoTalkData[vo] = true
+            if vo then
+                NoTalkData[vo] = true
+            end
         end
     else
         CheckVerboseMessage()

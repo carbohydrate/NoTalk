@@ -1,4 +1,9 @@
-$version = "1.0.2"
+#when uploading to curse:
+    #DisplayName - NoTalk-2.0.0
+    #Changelog - 10.0.0 release
+    #Change release type to release
+
+$version = "2.0.0"
 
 $PSScriptRoot = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
 New-Item -ItemType Directory -Force -Path "$PSScriptRoot\NoTalk"
