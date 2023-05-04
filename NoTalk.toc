@@ -1,9 +1,11 @@
-## Interface: 100007
+## Interface: 100100
 
 ## Title: NoTalk
-## Version: 2.0.3
-## Author: vitamin
 ## Notes: Do not display talking head frame.
+## Author: vitamin
+## Version: @project-version@
 ## SavedVariables: NoTalkData, NoTalkVerbose, NoTalkOnce
+## IconTexture: 458230
+## X-Curse-Project-ID: 556431
 
 NoTalk.lua
