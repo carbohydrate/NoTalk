@@ -1,5 +1,4 @@
-## Interface: 100100
-
+## Interface: 100105
 ## Title: NoTalk
 ## Notes: Do not display talking head frame.
 ## Author: vitamin
