@@ -1,4 +1,1 @@
 package-as: NoTalk
-
-ignore:
-  - release.ps1
