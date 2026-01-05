@@ -1,4 +1,4 @@
-## Interface: 100205
+## Interface: 110207
 ## Title: NoTalk
 ## Notes: Do not display talking head frame.
 ## Author: vitamin
@@ -6,5 +6,6 @@
 ## SavedVariables: NoTalkData, NoTalkVerbose, NoTalkOnce
 ## IconTexture: 458230
 ## X-Curse-Project-ID: 556431
+## X-Wago-ID: kGr0Be6y
 
 NoTalk.lua
